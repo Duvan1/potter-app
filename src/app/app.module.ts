@@ -14,6 +14,7 @@ import { EstudiantesComponent } from './pages/estudiantes/estudiantes.component'
 import { ProfesoresComponent } from './pages/profesores/profesores.component';
 import { PersonajesComponent } from './pages/personajes/personajes.component';
 import { SolicitudesComponent } from './pages/solicitudes/solicitudes.component';
+import { PersonajeComponent } from './pages/personaje/personaje.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SolicitudesComponent } from './pages/solicitudes/solicitudes.component'
     ProfesoresComponent,
     PersonajesComponent,
     SolicitudesComponent,
+    PersonajeComponent,
   ],
   imports: [
     BrowserModule,

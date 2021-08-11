@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfesoresService } from "../../servicios/profesores.service"
 import { Personaje } from 'src/app/modelos/personaje';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profesores',
@@ -11,7 +12,7 @@ export class ProfesoresComponent implements OnInit {
 
   public data : Personaje[] = [];
 
-  constructor(private profesoresService: ProfesoresService) { }
+  constructor(private profesoresService: ProfesoresService, private router: Router) { }
 
   ngOnInit(): void {
     this.profesoresService.getProfesores().subscribe(
@@ -23,6 +24,12 @@ export class ProfesoresComponent implements OnInit {
         this.data = []
       }
     )
+  }
+
+  goPersoanje(personaje: Personaje) {
+    this.router.navigateByUrl('/personaje', {
+      state: { personaje: personaje },
+    });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PersonajesService } from "../../servicios/personajes.service"
 import { Personaje } from 'src/app/modelos/personaje';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-personajes',
@@ -14,7 +15,7 @@ export class PersonajesComponent implements OnDestroy, OnInit {
   public casas = [
     {
       nombre: 'slytherin',
-      img: '/assets/imgs/Logo_Slytherin_2.png',
+      img: '/assets/imgs/slytherin.png',
       selected: false
     },
     {
@@ -36,9 +37,15 @@ export class PersonajesComponent implements OnDestroy, OnInit {
 
   public casaSeleccionada : string = "";
 
-  constructor(private personajesService: PersonajesService ) { }
+  constructor(private personajesService: PersonajesService, private router: Router ) { }
 
   ngOnInit(): void {
+  }
+
+  goPersoanje(personaje: Personaje) {
+    this.router.navigateByUrl('/personaje', {
+      state: { personaje: personaje },
+    });
   }
 
   selectCasa(nombre : string): void {

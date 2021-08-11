@@ -30,10 +30,11 @@
           <th>Nombre</th>
           <th>Patronus</th>
           <th>Imagen</th>
+          <th>Acción</th>          
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let d of data; let i = index">
+        <tr (click)="goPersoanje(d)" *ngFor="let d of data; let i = index">
           <td>{{ i + 1 }}</td>
           <td>{{ d.name }}</td>
           <td>{{ d.patronus }}</td>
@@ -41,6 +42,9 @@
             <div
               style="background: url({{d.image}}) 50% 50% no-repeat; background-size: cover; width: 200px; height: 200px;"
             ></div>
+          </td>
+          <td>
+            <button class="btn btn-primary" (click)="goPersoanje(d)" > Ver </button>
           </td>
         </tr>
       </tbody>
