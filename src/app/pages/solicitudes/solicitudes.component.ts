@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-solicitudes',
+  templateUrl: './solicitudes.component.html',
+  styleUrls: ['./solicitudes.component.sass']
+})
+export class SolicitudesComponent implements OnInit {
+  public data :any = []
+  constructor() { }
+
+  ngOnInit(): void {
+    if (localStorage.getItem("solicitudes")) {
+      this.data = JSON.parse(""+localStorage.getItem("solicitudes"));
+    }
+  }
+
+}

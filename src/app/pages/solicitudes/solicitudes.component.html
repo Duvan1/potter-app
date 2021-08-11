@@ -1,0 +1,26 @@
+<div class="container mt-4 mb-4">
+  <div *ngIf="data.length > 0" class="card card-table mt-4">
+    <table datatable class="row-border hover mt-4">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Patronus</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of data; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ d.name }}</td>
+          <td>{{ d.patronous }}</td>
+          <td>{{d.house}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="data.length === 0" class="text-center">
+    <h3>Sin solicitudes</h3>
+  </div>
+</div>

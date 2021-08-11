@@ -1,0 +1,49 @@
+<div class="container mt-4 mb-4">
+  <p class="text-center">Selecciona una casa {{ casaSeleccionada }}</p>
+  <div class="row mt-2">
+    <div
+      class="col-md-3"
+      (click)="selectCasa(casa.nombre)"
+      [ngClass]="{ selected: casa.selected }"
+      *ngFor="let casa of casas; let i = index"
+    >
+      <div class="card">
+        <img
+          class="card-img-top img-logo-casa"
+          src="{{ casa.img }}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h4 class="card-title text-center">
+            {{ casa.nombre.toUpperCase() }}
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="data.length > 0" class="card card-table mt-4">
+    <table datatable class="row-border hover mt-4">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Patronus</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of data; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ d.name }}</td>
+          <td>{{ d.patronus }}</td>
+          <td>
+            <div
+              style="background: url({{d.image}}) 50% 50% no-repeat; background-size: cover; width: 200px; height: 200px;"
+            ></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,82 @@
+<div class="container mt-4 mb-4">
+  <div *ngIf="data.length > 0" class="card card-table mt-4">
+    <table datatable class="row-border hover mt-4">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Patronus</th>
+          <th>Imagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of data; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ d.name }}</td>
+          <td>{{ d.patronus }}</td>
+          <td>
+            <div
+              style="background: url({{d.image}}) 50% 50% no-repeat; background-size: cover; width: 200px; height: 200px;"
+            ></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <form class="form mt-4" (ngSubmit)="onSubmit()" [formGroup]="estudianteForm">
+    <div class="text-center">
+      <h3>Solicitud para Registrar un nuevo estudiante</h3>
+      <div class="form-group">
+        <label fro="nombreInput">Nombre</label>
+        <input
+          class="form-control"
+          id="nombreInput"
+          type="text"
+          formControlName="name"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': form.name.errors }"
+        />
+        <div *ngIf="form.name.errors" class="invalid-feedback">
+          <div *ngIf="form.name.errors.required">El nombre es obligatorio</div>
+        </div>
+      </div>
+
+      <label>Patronous</label>
+      <input
+        type="text"
+        formControlName="patronous"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': form.patronous.errors }"
+      />
+      <div *ngIf="form.patronous.errors" class="invalid-feedback">
+        <div *ngIf="form.patronous.errors.required">
+          El patronous es obligatorio
+        </div>
+      </div>
+
+      <label>Casa</label>
+      <input
+        type="text"
+        formControlName="house"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': form.house.errors }"
+      />
+      <div *ngIf="form.house.errors" class="invalid-feedback">
+        <div *ngIf="form.house.errors.required">La casa es obligatoria</div>
+      </div>
+      <div class="btn-group">
+        <button
+          class="btn btn-primary mr-3"
+          [disabled]="estudianteForm.invalid"
+        >
+          Registrar
+        </button>
+        <button class="btn btn-secondary" type="reset" (click)="onReset()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </form>
+
+</div>
