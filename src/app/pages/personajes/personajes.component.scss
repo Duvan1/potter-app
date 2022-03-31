@@ -1,0 +1,23 @@
+.card {
+  background-color: transparent;
+  padding: 10px;
+  border: 1px solid #ffff;
+  border-radius: 5px;
+  cursor: pointer;
+  img:hover {
+    transform: scale(1.2);
+  }
+}
+
+.img-logo-casa {
+  height: 20em;
+}
+
+.white-color {
+  color: white;
+}
+
+.selected {
+  border: 5px solid #007acc !important;
+}
+

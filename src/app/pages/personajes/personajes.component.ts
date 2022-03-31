@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-personajes',
   templateUrl: './personajes.component.html',
-  styleUrls: ['./personajes.component.sass']
+  styleUrls: ['./personajes.component.scss']
 })
 export class PersonajesComponent implements OnDestroy, OnInit {
 

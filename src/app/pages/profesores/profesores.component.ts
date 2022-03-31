@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-profesores',
   templateUrl: './profesores.component.html',
-  styleUrls: ['./profesores.component.sass']
+  styleUrls: ['./profesores.component.scss']
 })
 export class ProfesoresComponent implements OnInit {
 

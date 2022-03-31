@@ -15,6 +15,7 @@ import { ProfesoresComponent } from './pages/profesores/profesores.component';
 import { PersonajesComponent } from './pages/personajes/personajes.component';
 import { SolicitudesComponent } from './pages/solicitudes/solicitudes.component';
 import { PersonajeComponent } from './pages/personaje/personaje.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PersonajeComponent } from './pages/personaje/personaje.component';
     HttpClientModule,
     DataTablesModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
